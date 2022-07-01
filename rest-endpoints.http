@@ -1,0 +1,44 @@
+# QUOTES CRUD
+
+GET http://localhost:5000/quotes
+
+###
+
+POST http://localhost:5000/quotes
+Content-Type: application/json
+
+{
+    "text": "The Lord is good to me, so i'll praise lord",
+    "authorId": 2 
+}
+
+### 
+
+PATCH http://localhost:5000/quotes/1
+
+###
+
+DELETE http://localhost:5000/quotes/2
+
+###
+
+# --------------------------------
+# AUTHORS CRUD
+# --------------------------------
+
+GET http://localhost:5000/authors
+
+###
+
+POST http://localhost:5000/authors
+Content-Type: application/json
+
+{
+    "name": "King David"
+}
+
+###
+
+GET http://localhost:5000/authors/1
+
+

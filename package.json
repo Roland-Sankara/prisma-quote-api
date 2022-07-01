@@ -10,7 +10,9 @@
   "author": "Roland-Sankara",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^3.15.2",
     "express": "^4.18.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "prisma": "^3.15.2"
   }
 }
