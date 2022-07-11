@@ -8,7 +8,7 @@ POST http://localhost:5000/quotes
 Content-Type: application/json
 
 {
-    "text": "The Lord is good to me, so i'll praise lord",
+    "text": "He restores my soul",
     "authorId": 2 
 }
 
@@ -40,5 +40,17 @@ Content-Type: application/json
 ###
 
 GET http://localhost:5000/authors/1
+
+###
+GET http://localhost:5000/users
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "username" : "Noel",
+    "password": "heh3433"
+}
 
 
