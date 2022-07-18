@@ -1,3 +1,6 @@
+const {PrismaClient} = require('@prisma/client');
+const prisma = new PrismaClient();
+
 const getAllAuthors = async(req, res)=>{
     try {
         const authors = await prisma.author.findMany({
@@ -46,4 +49,3 @@ module.exports = {
     getAuthorById,
     createAuthor
 }
-

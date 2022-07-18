@@ -41,7 +41,13 @@ Content-Type: application/json
 
 GET http://localhost:5000/authors/1
 
+
 ###
+
+# --------------------------------
+# USERS CRUD
+# --------------------------------
+
 GET http://localhost:5000/users
 
 ###

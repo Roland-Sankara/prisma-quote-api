@@ -23,8 +23,8 @@ router.post('/', [authenticate ,validateData(quoteSchema)], createQuote)
 
 router.get('/:quoteId', getQuoteById)
 
-router.patch('/:quoteId', updateQuoteById)
+router.patch('/:quoteId', authenticate, updateQuoteById)
 
-router.delete('/:quoteId', deleteQuoteById)
+router.delete('/:quoteId', authenticate, deleteQuoteById)
 
 module.exports = router;

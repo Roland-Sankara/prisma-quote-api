@@ -1,4 +1,5 @@
 const {PrismaClient} = require('@prisma/client');
+const { StatusCodes } = require('http-status-codes');
 const JWT = require('jsonwebtoken');
 const prisma = new PrismaClient();
 
@@ -11,9 +12,9 @@ const prisma = new PrismaClient();
 const getAllUsers = async(req, res)=>{
     try {
         const users = await prisma.user.findMany({})
-        res.status(200).json(users);
+        res.status(StatusCodes.OK).json(users);
     } catch (error) {
-       res.status(500).json('Failed to perform request')
+       res.status(StatusCodes.INTERNAL_SERVER_ERROR).json('Failed to perform request')
     }
     
 }
@@ -31,9 +32,9 @@ const createUser = async(req, res)=>{
             userId: newUser.id
         }, "open123");
 
-        res.status(200).json({newUser,token});
+        res.status(StatusCodes.OK).json({newUser,token});
     } catch (error) {
-       res.status(500).json('Failed to perform request')
+       res.status(StatusCodes.INTERNAL_SERVER_ERROR).json('Failed to perform request')
     }
     
 }

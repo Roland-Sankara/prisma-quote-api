@@ -2,7 +2,6 @@ const JWT = require('jsonwebtoken');
 
 const authenticate = (req, res, next)=>{
     const authHeader = req.headers['authorization'];
-    console.log(authHeader, req.headers);
     if(authHeader){
         if(authHeader.startsWith('Bearer')){
             const token = authHeader.split(' ')[1];
@@ -10,7 +9,6 @@ const authenticate = (req, res, next)=>{
                 if(err){
                     res.status(400).json('Token is Invalid');
                 }else{
-                    console.log(decoded);
                     next();
                 }
             })
