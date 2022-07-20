@@ -32,7 +32,7 @@ const createUser = async(req, res)=>{
             userId: newUser.id
         }, "open123");
 
-        res.status(StatusCodes.OK).json({newUser,token});
+        res.status(StatusCodes.OK).json({newUser, token});
     } catch (error) {
        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json('Failed to perform request')
     }
