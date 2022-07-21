@@ -8,10 +8,21 @@ const userOne = {
     password: "18388dduy8"
 }
 
+beforeAll(async()=>{
+    await prisma.user.create({
+        data: {
+            username: 'TestUser1',
+            password: "seed12345--"
+        }
+    })
+})
+
 afterAll(async()=>{
-    await prisma.user.delete({
+    await prisma.user.deleteMany({
         where:{
-            username: userOne.username
+            username: {
+                contains: 'Test'
+            }
         }
     })
 })

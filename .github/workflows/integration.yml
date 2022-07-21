@@ -1,0 +1,48 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  DATABASE_URL=postgresql://postgres:roland@DB@localhost:5432/quotedb?schema=public
+
+jobs:
+  test:
+    runs_on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:14-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: roland@DB
+          POSTGRES_DB: quotedb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code in current branch and add it to CI-server
+        uses: actions/checkout@v2
+
+      - name: Install node.js on CI-server
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install project depedencies
+        run: npm ci
+
+      - name: Run database migrations
+        run: npm run db-migrate
+      
+      - name: Run tests
+        run: npm test
+
