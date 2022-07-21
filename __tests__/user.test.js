@@ -4,7 +4,7 @@ const app = require('../app');
 const prisma = new PrismaClient
 
 const userOne = {
-    username: 'TestUser2',
+    username: 'TestUser3',
     password: "18388dduy8"
 }
 
