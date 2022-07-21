@@ -7,11 +7,11 @@ on:
     branches: [main]
 
 env:
-  DATABASE_URL=postgresql://postgres:roland@DB@localhost:5432/quotedb?schema=public
+  DATABASE_URL: postgresql://postgres:roland@DB@localhost:5432/quotedb?schema=public
 
 jobs:
   test:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     services:
       postgres:
