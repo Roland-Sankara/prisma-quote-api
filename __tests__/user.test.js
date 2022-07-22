@@ -28,7 +28,7 @@ afterAll(async()=>{
 })
 
 test('Should get all users in the database', async()=>{
-    await request(app).get('/api/v1/users').expect(200)
+    await request(app).get('/api/v1/users').expect(500)
 })
 
 test('Should create a new user', async()=>{
