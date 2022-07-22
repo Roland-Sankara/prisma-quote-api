@@ -25,22 +25,22 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
+    
     steps:
-      - name: Checkout code in current branch and add it to CI-server
-        uses: actions/checkout@v2
-
-      - name: Install node.js on CI-server
+      - name: checkout code into the runner
+        uses: actions/checkout@v2 
+      
+      - name: Setup node on the runner 
         uses: actions/setup-node@v1
         with:
           node-version: 14
 
-      - name: Install project depedencies
-        run: npm ci
+      - name: Install project dependencies
+        run: npm ci 
 
-      - name: Run database migrations
+      - name: Run database migration files
         run: npm run db-migrate
-      
-      - name: Run tests
+
+      - name: Run unit tests
         run: npm test
 
