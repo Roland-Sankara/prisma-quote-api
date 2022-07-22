@@ -1,4 +1,4 @@
-name: Deploy to production
+name: Continuous Deployment
 
 on:
   push:
