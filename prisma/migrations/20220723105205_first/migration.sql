@@ -11,6 +11,7 @@ CREATE TABLE "Quote" (
 CREATE TABLE "Author" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
+    "imageUrl" TEXT NOT NULL,
 
     CONSTRAINT "Author_pkey" PRIMARY KEY ("id")
 );
@@ -29,6 +30,9 @@ CREATE UNIQUE INDEX "Quote_text_key" ON "Quote"("text");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Author_name_key" ON "Author"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Author_imageUrl_key" ON "Author"("imageUrl");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
