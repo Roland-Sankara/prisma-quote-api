@@ -49,7 +49,7 @@ const createAuthor = async(req, res)=>{
         const newAuthor = await prisma.author.create({
             data: {
                 name: req.body.name,
-                imageUrl: uploadedImage.url
+                picture: uploadedImage.url
             }
         })
         // delete file from uploads folder
