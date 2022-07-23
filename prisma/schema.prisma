@@ -18,10 +18,10 @@ model Quote {
 }
 
 model Author {
-  id       Int     @id @default(autoincrement())
-  name     String  @unique
-  imageUrl String  @unique
-  quotes   Quote[]
+  id      Int     @id @default(autoincrement())
+  name    String  @unique
+  picture String  @unique
+  quotes  Quote[]
 }
 
 model User {
