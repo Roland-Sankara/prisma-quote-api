@@ -11,20 +11,21 @@ datasource db {
 }
 
 model Quote {
-  id       Int     @id @default(autoincrement())
-  text     String  @unique
+  id       Int    @id @default(autoincrement())
+  text     String @unique
   author   Author @relation(fields: [authorId], references: [id])
   authorId Int
 }
 
 model Author {
-  id     Int     @id @default(autoincrement())
-  name   String  @unique
-  quotes Quote[]
+  id       Int     @id @default(autoincrement())
+  name     String  @unique
+  imageUrl String  @unique
+  quotes   Quote[]
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id       Int    @id @default(autoincrement())
   username String @unique
-  password String 
+  password String
 }
