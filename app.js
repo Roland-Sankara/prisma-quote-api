@@ -16,7 +16,7 @@ app.use(express.json())
 app.get('/api/v1/', (req, res)=>{
     res.status(200).json({
         status:200, 
-        message:"Awesome the API works fine. Checkout the docs below🐻",
+        message:"Awesome the API works fine with Render. Checkout the docs below🐻",
         api_documentation: "https://documenter.getpostman.com/view/6512450/UzJMrv7V" 
     })
 });
