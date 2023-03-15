@@ -45,6 +45,7 @@ test('Should not create a new user without username', async()=>{
     }).expect(500)
 })
 
+
 /**
  * CHALLENGE
  * 1. Goal: Test login failure

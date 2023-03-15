@@ -13,9 +13,10 @@ jobs:
       - name: Checkout code and add it to CI server
         uses: actions/checkout@v2
       
-      - name: Setup heroku deploy action
-        uses: akhileshns/heroku-deploy@v3.12.12
+      - name: Setup render deploy action
+        uses: JorgeLNJunior/render-deploy@v1.3.2
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "prisma-quote-api"
-          heroku_email: "roland1sankara@gmail.com"
+          service_id: ${{secrets.RENDER_SERVICE_ID}} # required
+          api_key: ${{secrets.RENDER_API_KEY}} # required
+          clear_cache: false # Clear build cache. Optional
+          wait_deploy: false # Wait until the deploy status is successful. Warning! Free Render services can take +5 minutes to be fully deployed. Optional
